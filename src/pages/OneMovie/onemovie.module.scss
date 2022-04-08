@@ -1,0 +1,74 @@
+.movie {
+  width: 100%;
+  color: #fff;
+  &__image {
+    border-radius: 15px;
+    width: 500px;
+    height: 750px;
+  }
+  &__rating {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(48, 53, 57, 0.85);
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: flex;
+    color: #3f92d2;
+    align-items: center;
+  }
+  &__container {
+    max-width: 1230px;
+    margin: 0 auto;
+    height: inherit;
+    &__inner {
+      display: flex;
+    }
+    &__image {
+      width: 500px;
+      height: 750px;
+      border-radius: 15px;
+      position: relative;
+      margin-right: 50px;
+    }
+    &__content {
+    }
+    &__title {
+      font-size: 50px;
+      margin-bottom: 5px;
+    }
+    &__year {
+      font-weight: 200;
+      font-size: 35px;
+      margin-bottom: 8px;
+    }
+    &__tags {
+      margin-right: 0;
+      font-size: 20px;
+    }
+    &__synopsis {
+      font-weight: 400;
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+    &__description {
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+    &__comments {
+      font-size: 30px;
+      font-weight: 500;
+      margin-bottom: 6px;
+      &__text {
+        max-height: 200px;
+        overflow-y: scroll;
+        margin-bottom: 20px;
+        padding-right: 5px;
+      }
+    }
+  }
+}
+
+.form {
+}

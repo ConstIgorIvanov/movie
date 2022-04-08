@@ -1,0 +1,22 @@
+.movie {
+  width: 100%;
+  color: #fff;
+  &__container {
+    max-width: 1230px;
+    margin: 0 auto;
+    height: inherit;
+    &__inner {
+      display: flex;
+      flex-wrap: wrap;
+      
+    }
+  }
+}
+
+.loading{
+  
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  color: white;
+}
