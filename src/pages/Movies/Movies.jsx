@@ -3,6 +3,7 @@ import style from "./movies.module.scss";
 import React from "react";
 import Skelet from "../../components/Skelet/Skelet";
 import { useSelector } from "react-redux";
+
 const Movies = () => {
   const movies = useSelector((state) => state.movie.movies);
   const fetch = useSelector((state) => state.movie.isFetching);

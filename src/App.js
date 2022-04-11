@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import React from "react";
 import { useDispatch} from "react-redux";
 import { getMovie } from "./features/movie/movieSlice";
+
 function App() {
   const dispatch = useDispatch();
   dispatch(getMovie(1));

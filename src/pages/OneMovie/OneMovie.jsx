@@ -31,13 +31,21 @@ const OneMovie = () => {
               className={style.movie__image}
               alt="Постер"
             ></img>
-            <span className={style.movie__rating}>{movie.rating || "rating"}</span>
+            <span className={style.movie__rating}>
+              {movie.rating || "rating"}
+            </span>
           </div>
 
           <div className={style.movie__container__content}>
-            <div className={style.movie__container__title}>{movie.title || "Title"}</div>
-            <div className={style.movie__container__year}>{movie.year || "Year"}</div>
-            <div className={style.movie__container__tags}>{movie.genres || "Genres"}</div>
+            <div className={style.movie__container__title}>
+              {movie.title || "Title"}
+            </div>
+            <div className={style.movie__container__year}>
+              {movie.year || "Year"}
+            </div>
+            <div className={style.movie__container__tags}>
+              {movie.genres || "Genres"}
+            </div>
             <div className={style.movie__container__synopsis}>Synopsis</div>
             <div className={style.movie__container__descriprion}>
               {movie.description_full || "Description"}
