@@ -3,17 +3,30 @@ import { useSelector, useDispatch } from "react-redux";
 import React from "react";
 import { useParams } from "react-router-dom";
 import { setComments, setCurrentMovie } from "../../features/movie/movieSlice";
+
 const OneMovie = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const inputRef = React.useRef();
   const movie = useSelector((state) => state.movie.currentMovie);
   const comments = useSelector((state) => state.movie.currentMovie.comments);
+  const [localComments, setLocalComments] = React.useState([]);
 
   React.useEffect(() => {
     dispatch(setCurrentMovie(id));
+    const localStorageRef = JSON.parse(localStorage.getItem("comment"));
+    if (localStorageRef) {
+      const com = localStorageRef.filter((item) => item.filmId === Number(id));
+      com.forEach((item) =>
+        setLocalComments((prev) => [...prev, item.comments])
+      );
+    }
   }, []);
-
+  
+  React.useEffect(()=>{
+    setLocalComments((prev)=> [...prev, comments])
+  }, [comments])
+  
   const addComments = () => {
     if (inputRef.current.value !== "") {
       dispatch(setComments(inputRef.current.value));
@@ -52,7 +65,7 @@ const OneMovie = () => {
             </div>
             <div className={style.movie__container__comments}>Comments</div>
             <div className={style.movie__container__comments_text}>
-              {comments?.map((i) => (
+              {localComments.map((i) => (
                 <div>{i}</div>
               ))}
             </div>
