@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import movieSlice from '../features/movie/movieSlice'
-import { localSave } from "../middlewaer/localStorage";
+import { localSave } from "../middleware/localStorage";
 export const store = configureStore({
   reducer: {
     movie: movieSlice,
