@@ -3,7 +3,12 @@ export const localSave = (store) => (next) => (action) => {
     const id = store.getState().movie.currentMovie.id;
     let comment = {
       filmId: id,
-      comments: [action.payload],
+      comments: {
+        id: Math.random(),
+        comment: [action.payload],
+        date: new Date().toLocaleDateString(),
+        time: new Date().toLocaleTimeString(),
+      },
     };
     const setComment = (item) => {
       if (item) {

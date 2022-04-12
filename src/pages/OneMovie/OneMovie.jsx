@@ -9,7 +9,7 @@ const OneMovie = () => {
   const dispatch = useDispatch();
   const inputRef = React.useRef();
   const movie = useSelector((state) => state.movie.currentMovie);
-  const comments = useSelector((state) => state.movie.currentMovie.comments);
+  // const comments = useSelector((state) => state.movie.currentMovie.comments);
   const [localComments, setLocalComments] = React.useState([]);
 
   React.useEffect(() => {
@@ -22,15 +22,25 @@ const OneMovie = () => {
       );
     }
   }, []);
-  
-  React.useEffect(()=>{
-    setLocalComments((prev)=> [...prev, comments])
-  }, [comments])
-  
+
+  // React.useEffect(()=>{
+  //   setLocalComments((prev)=> [...prev, comments])
+  // }, [comments])
+
   const addComments = () => {
     if (inputRef.current.value !== "") {
       dispatch(setComments(inputRef.current.value));
-      inputRef.current.value = " ";
+      setLocalComments((prev) => [
+        ...prev,
+        {
+          comment: [inputRef.current.value],
+          date: new Date().toLocaleDateString(),
+          time: new Date().toLocaleTimeString(),
+        },
+      ]);
+      setTimeout(() => {
+        inputRef.current.value = " ";
+      }, 100);
     }
   };
 
@@ -66,7 +76,11 @@ const OneMovie = () => {
             <div className={style.movie__container__comments}>Comments</div>
             <div className={style.movie__container__comments_text}>
               {localComments.map((i) => (
-                <div>{i}</div>
+                <div className={style.comment}>
+                  <div className={style.comment__item}>{i.comment}</div>
+                  <div className={style.comment__item}>{i.date}</div>
+                  <div className={style.comment__item}>{i.time}</div>
+                </div>
               ))}
             </div>
             <div className={style.form}>
