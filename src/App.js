@@ -12,7 +12,7 @@ function App() {
   dispatch(getMovie(1));
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path="/movie" element={<Layout />}>
         <Route index element={
         <Movies />
         } />

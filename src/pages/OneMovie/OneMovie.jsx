@@ -9,7 +9,6 @@ const OneMovie = () => {
   const dispatch = useDispatch();
   const inputRef = React.useRef();
   const movie = useSelector((state) => state.movie.currentMovie);
-  // const comments = useSelector((state) => state.movie.currentMovie.comments);
   const [localComments, setLocalComments] = React.useState([]);
 
   React.useEffect(() => {
@@ -22,10 +21,6 @@ const OneMovie = () => {
       );
     }
   }, []);
-
-  // React.useEffect(()=>{
-  //   setLocalComments((prev)=> [...prev, comments])
-  // }, [comments])
 
   const addComments = () => {
     if (inputRef.current.value !== "") {
