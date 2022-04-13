@@ -9,7 +9,7 @@ const Header = () => {
     <div className={styles.header}>
       <div className={styles.header__container}>
         <div className={styles.header__container__inner}>
-          <Link to="/" onClick={() => dispatch(setMovie({}))}>Movies</Link>
+          <Link to="/movie" onClick={() => dispatch(setMovie({}))}>Movies</Link>
           <Pagination />
         </div>
       </div>
