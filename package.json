@@ -1,7 +1,7 @@
 {
   "name": "msu-movie",
   "version": "0.1.0",
-  "homepage": "https://constigorivanov.github.io/#/",
+  "homepage": "https://constigorivanov.github.io/movie/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
