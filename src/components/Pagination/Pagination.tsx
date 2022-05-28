@@ -1,11 +1,12 @@
-import style from "./pagination.module.scss";
-import { useDispatch, useSelector } from "react-redux";
-import { getMovie, setCurrentPage } from "../../features/movie/movieSlice";
+import { useAppDispatch, useAppSelector } from '../../hooks';
 
-import React from "react";
-const Pagination = () => {
-  const dispatch = useDispatch();
-  const page = useSelector((state) => state.movie.page);
+import { getMovie, setCurrentPage } from '../../features/movie/movieSlice';
+
+import style from './pagination.module.scss';
+
+const Pagination: React.FC = () => {
+  const dispatch = useAppDispatch();
+  const page = useAppSelector((state) => state.movie.page);
 
   const prevCurrent = page - 1;
   const nextCurrent = page + 1;
@@ -20,7 +21,7 @@ const Pagination = () => {
     dispatch(setCurrentPage(nextCurrent));
     dispatch(getMovie(nextCurrent));
   };
-  
+
   return (
     <div>
       {prevCurrent <= 0 ? null : (
@@ -28,10 +29,7 @@ const Pagination = () => {
           {prevCurrent}
         </button>
       )}
-      <button
-        onClick={() => dispatch(getMovie(page))}
-        className={btn.join(" ")}
-      >
+      <button onClick={() => dispatch(getMovie(page))} className={btn.join(' ')}>
         {page}
       </button>
       <button onClick={() => nextAdd()} className={style.btn}>

@@ -1,6 +1,6 @@
-import style from "./skelet.module.scss";
+import style from './skelet.module.scss';
 
-const Skelet = () => {
+const Skelet: React.FC = () => {
   return (
     <div>
       <div className={style.movie}>

@@ -1,8 +1,16 @@
-import { Link } from "react-router-dom";
-import style from "./movieitem.module.scss";
+import { Link } from 'react-router-dom';
+import style from './movieitem.module.scss';
 
-const MovieItem = ({ title, year, image, id, rating, genre }) => {
+interface MovieItemProps {
+  id: number;
+  title: string;
+  year: number;
+  image: string;
+  rating: number;
+  genre: string;
+}
 
+const MovieItem: React.FC<MovieItemProps> = ({ title, year, image, id, rating, genre }) => {
   return (
     <div className={style.movie}>
       <div className={style.movie__container}>
@@ -10,10 +18,7 @@ const MovieItem = ({ title, year, image, id, rating, genre }) => {
           <div className={style.info}>
             <div className={style.info__rating}>{rating}</div>
             <div className={style.info__genre}>{genre}</div>
-            <Link
-              to={`movie/${id}`}
-              className={style.info__more}
-            >
+            <Link to={`movie/${id}`} className={style.info__more}>
               More
             </Link>
           </div>
