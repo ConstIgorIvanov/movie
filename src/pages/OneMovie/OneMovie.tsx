@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-import { setComments, setCurrentMovie } from '../../features/movie/movieSlice';
+import { CurrentMovie, setComments, setCurrentMovie } from '../../features/movie/movieSlice';
 import { useAppSelector, useAppDispatch } from '../../hooks';
 
 import style from './onemovie.module.scss';
@@ -21,12 +21,13 @@ const OneMovie: React.FC = () => {
   const { id } = useParams();
   const dispatch = useAppDispatch();
   const [value, setValue] = React.useState<string>('');
+
   const movie = useAppSelector((state) => state.movie.currentMovie);
   const [localComments, setLocalComments] = React.useState<comments[]>([]);
 
   React.useEffect(() => {
     dispatch(setCurrentMovie(Number(id)));
-    const localStorageRef: localStorage[] = JSON.parse(localStorage.getItem('comment') || '{}');
+    const localStorageRef: localStorage[] = JSON.parse(localStorage.getItem('comment') || '[]');
     if (localStorageRef) {
       const com = localStorageRef.filter((item) => item.filmId === Number(id));
       com.forEach((item: localStorage) => setLocalComments((prev) => [...prev, item.comments]));
@@ -48,6 +49,8 @@ const OneMovie: React.FC = () => {
       }, 100);
     }
   };
+
+  if (!movie) return <div>Loading</div>;
 
   return (
     <div className={style.movie}>

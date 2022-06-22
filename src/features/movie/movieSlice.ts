@@ -13,7 +13,7 @@ type Movie = {
   medium_cover_image: string;
 };
 
-interface CurrentMovie extends Movie {
+export interface CurrentMovie extends Movie {
   large_cover_image: string;
   description_full: string;
   comments?: string[];
