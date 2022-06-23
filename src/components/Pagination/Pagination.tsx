@@ -30,7 +30,7 @@ const Pagination: React.FC = () => {
         </button>
       )}
       <button onClick={() => dispatch(getMovie(page))} className={btn.join(' ')}>
-        {page}
+        <div>{page}</div>
       </button>
       <button onClick={() => nextAdd()} className={style.btn}>
         {nextCurrent}

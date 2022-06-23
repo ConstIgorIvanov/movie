@@ -8,15 +8,15 @@
   height: 30px;
   padding: 5px 30px;
   color: white;
-  transition: all 0.4s;
   background-color: inherit;
+
+  &:hover {
+    border-color: #3f92d2;
+    color: #3f92d2;
+  }
 }
-.li:hover {
-  border: 1px solid #3f92d2;
-  color: #3f92d2;
-}
+
 .active {
   border-color: #3f92d2;
   color: #3f92d2;
 }
-

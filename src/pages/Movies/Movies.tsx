@@ -30,7 +30,7 @@ const Movies: React.FC = () => {
             <MovieItem
               key={movie.id}
               rating={movie.rating}
-              genre={movie.genre}
+              genres={movie.genres}
               id={movie.id}
               title={movie.title}
               year={movie.year}

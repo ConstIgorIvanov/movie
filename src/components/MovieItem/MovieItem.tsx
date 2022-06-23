@@ -7,22 +7,23 @@ interface MovieItemProps {
   year: number;
   image: string;
   rating: number;
-  genre: string;
+  genres: string[];
 }
 
-const MovieItem: React.FC<MovieItemProps> = ({ title, year, image, id, rating, genre }) => {
+const MovieItem: React.FC<MovieItemProps> = ({ title, year, image, id, rating, genres }) => {
+  console.log(genres);
   return (
     <div className={style.movie}>
       <div className={style.movie__container}>
         <div className={style.movie__main}>
           <div className={style.info}>
             <div className={style.info__rating}>{rating}</div>
-            <div className={style.info__genre}>{genre}</div>
+            <div className={style.info__genre}>{genres}</div>
             <Link to={`movie/${id}`} className={style.info__more}>
               More
             </Link>
           </div>
-          <img src={image} alt="none" />
+          <img className={style.image} src={image} alt="none" />
         </div>
         <div className={style.movie__subtitle}>
           <div className={style.movie__subtitle__title}>{title}</div>

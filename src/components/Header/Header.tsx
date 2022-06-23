@@ -22,7 +22,7 @@ const Header = () => {
                   year: 1,
                   image: 'test',
                   rating: 2,
-                  genre: 'test',
+                  genres: ['test'],
                   large_cover_image: 'test',
                   description_full: 'test',
                   medium_cover_image: 'test',

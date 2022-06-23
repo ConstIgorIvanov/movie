@@ -7,7 +7,7 @@ type Movie = {
   year: number;
   image: string;
   rating: number;
-  genre: string;
+  genres: string[];
   large_cover_image: string;
   description_full: string;
   medium_cover_image: string;
@@ -43,7 +43,7 @@ const initialState: MovieState = {
     year: 1,
     image: 'test',
     rating: 2,
-    genre: 'test',
+    genres: ['test'],
     large_cover_image: 'test',
     description_full: 'test',
     medium_cover_image: 'test',

@@ -7,7 +7,7 @@ import OneMovie from './pages/OneMovie/OneMovie';
 import { getMovie } from './features/movie/movieSlice';
 import { useAppDispatch } from './hooks';
 
-import './App.scss';
+import './scss/app.scss';
 
 const App: React.FC = () => {
   const dispatch = useAppDispatch();

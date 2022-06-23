@@ -1,9 +1,7 @@
 .movie {
-  position: relative;
-  width: 250px;
-  padding: 0 12.5px;
+  width: 300px;
+  padding: 0 12px;
   margin-bottom: 25px;
-
   &__subtitle {
     &__title {
       font-size: 18px;
@@ -13,13 +11,7 @@
       color: gray;
     }
   }
-  &__main {
-    border: 5px solid #fff;
-    transition: border 0.4s ease;
-    border-radius: 5px;
-    width: 230px;
-    height: 345px;
+  &__main img {
+    border-radius: 12px;
   }
 }
-
-

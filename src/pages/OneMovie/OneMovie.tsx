@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-import { CurrentMovie, setComments, setCurrentMovie } from '../../features/movie/movieSlice';
+import { setComments, setCurrentMovie } from '../../features/movie/movieSlice';
 import { useAppSelector, useAppDispatch } from '../../hooks';
 
 import style from './onemovie.module.scss';
@@ -12,6 +12,7 @@ type comments = {
   date: string;
   time: string;
 };
+
 type localStorage = {
   filmId: number;
   comments: comments;
@@ -50,8 +51,6 @@ const OneMovie: React.FC = () => {
     }
   };
 
-  if (!movie) return <div>Loading</div>;
-
   return (
     <div className={style.movie}>
       <div className={style.movie__container}>
@@ -64,7 +63,7 @@ const OneMovie: React.FC = () => {
           <div className={style.movie__container__content}>
             <div className={style.movie__container__title}>{movie.title || 'Title'}</div>
             <div className={style.movie__container__year}>{movie.year || 'Year'}</div>
-            <div className={style.movie__container__tags}>{movie.genre || 'Genres'}</div>
+            <div className={style.movie__container__tags}>{[...movie.genres] || 'Genres'}</div>
             <div className={style.movie__container__synopsis}>Synopsis</div>
             <div className={style.movie__container__descriprion}>
               {movie.description_full || 'Description'}
