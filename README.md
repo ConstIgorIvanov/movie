@@ -8,10 +8,10 @@ Adding comments to a movie in localStorage using Middleware (checked local Stora
 
 ### Using
 
-ReduxToolKit
-TypeScript
-scss-module
-react-router-dom
+# ReduxToolKit
+# TypeScript
+# scss-module
+# react-router-dom
 
 ### Note
 
