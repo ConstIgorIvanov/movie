@@ -1,11 +1,18 @@
-Movie.
+### About
 
-Using Redux Toolkit, react-routed-dom
+List of movies retrieved from yts.mx/api.
+On the main page there is a list of films, with brief information about the film.
+A separate page of the current movie (I don't know why I decided to take the information for the request from the link - most likely I tested the capabilities of ReactRouterDom, now the application crashes when updating the page of the current movie)
+Simple custom pagination and skeleton.
+Adding comments to a movie in localStorage using Middleware (checked local Storage and middleware)
 
-scss-module.
+### Using
 
-Simple custom Pagination and Skeleton(no use react-paginate and react-content-loader). 
+ReduxToolKit
+TypeScript
+scss-module
+react-router-dom
 
-Middleware for saving in localStorage comments.
+### Note
 
-RTK Thunk + axios for queries.
+API sometimes returns empty ratings, description, or other items.
