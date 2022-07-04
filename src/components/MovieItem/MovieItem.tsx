@@ -11,19 +11,24 @@ interface MovieItemProps {
 }
 
 const MovieItem: React.FC<MovieItemProps> = ({ title, year, image, id, rating, genres }) => {
-  console.log(genres);
   return (
     <div className={style.movie}>
       <div className={style.movie__container}>
         <div className={style.movie__main}>
           <div className={style.info}>
             <div className={style.info__rating}>{rating}</div>
-            <div className={style.info__genre}>{genres}</div>
+            <div className={style.info__genre}>
+              {genres ? (
+                genres.map((genre, idx) => <div key={idx}>{genre}</div>)
+              ) : (
+                <div>No Info</div>
+              )}
+            </div>
             <Link to={`movie/${id}`} className={style.info__more}>
               More
             </Link>
           </div>
-          <img className={style.image} src={image} alt="none" />
+          <img className={style.image} src={image} alt="No info" />
         </div>
         <div className={style.movie__subtitle}>
           <div className={style.movie__subtitle__title}>{title}</div>

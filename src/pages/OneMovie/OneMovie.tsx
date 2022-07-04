@@ -63,7 +63,9 @@ const OneMovie: React.FC = () => {
           <div className={style.movie__container__content}>
             <div className={style.movie__container__title}>{movie.title || 'Title'}</div>
             <div className={style.movie__container__year}>{movie.year || 'Year'}</div>
-            <div className={style.movie__container__tags}>{[...movie.genres] || 'Genres'}</div>
+            <div className={style.movie__container__tags}>
+              {movie.genres.map((i, idx) => <div key={idx}>{i}</div>) || 'Genres'}
+            </div>
             <div className={style.movie__container__synopsis}>Synopsis</div>
             <div className={style.movie__container__descriprion}>
               {movie.description_full || 'Description'}
@@ -79,8 +81,14 @@ const OneMovie: React.FC = () => {
               ))}
             </div>
             <div className={style.form}>
-              <input type="text" value={value} onChange={(e) => setValue(e.target.value)}></input>
-              <button onClick={() => addComments()}>Send</button>
+              <input
+                className={style.form__input}
+                type="text"
+                value={value}
+                onChange={(e) => setValue(e.target.value)}></input>
+              <button className={style.form__btn} onClick={() => addComments()}>
+                send
+              </button>
             </div>
           </div>
         </div>
