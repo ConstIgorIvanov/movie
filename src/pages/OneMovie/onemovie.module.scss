@@ -3,8 +3,6 @@
   color: #fff;
   &__image {
     border-radius: 15px;
-    width: 500px;
-    height: 750px;
   }
   &__rating {
     position: absolute;
@@ -23,6 +21,9 @@
     height: inherit;
     &__inner {
       display: flex;
+      @media (max-width: 750px) {
+        flex-direction: column;
+      }
     }
     &__image {
       width: 500px;
@@ -30,6 +31,20 @@
       border-radius: 15px;
       position: relative;
       margin-right: 50px;
+      @media (max-width: 500px) {
+        display: none;
+      }
+
+      &__small {
+        display: none;
+        position: relative;
+        width: 230px;
+        height: 345px;
+        margin-right: 50px;
+        @media (max-width: 500px) {
+          display: block;
+        }
+      }
     }
     &__content {
     }

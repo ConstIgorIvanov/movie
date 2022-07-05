@@ -50,13 +50,18 @@ const OneMovie: React.FC = () => {
       }, 100);
     }
   };
-
+  console.log(movie);
   return (
     <div className={style.movie}>
       <div className={style.movie__container}>
         <div className={style.movie__container__inner}>
           <div className={style.movie__container__image}>
             <img src={movie.large_cover_image} className={style.movie__image} alt="Постер"></img>
+            <span className={style.movie__rating}>{movie.rating || 'rating'}</span>
+          </div>
+
+          <div className={style.movie__container__image__small}>
+            <img src={movie.medium_cover_image} className={style.movie__image} alt="Постер"></img>
             <span className={style.movie__rating}>{movie.rating || 'rating'}</span>
           </div>
 
