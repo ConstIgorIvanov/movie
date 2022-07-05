@@ -16,3 +16,4 @@ Adding comments to a movie in localStorage using Middleware (test local Storage 
 ### Note
 
 API sometimes returns empty ratings, description, or other items.
+Adaptiv layout.
