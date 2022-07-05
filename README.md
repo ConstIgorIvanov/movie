@@ -6,6 +6,8 @@ A separate page of the current movie.
 Simple custom pagination and skeleton.
 Adding comments to a movie in localStorage using Middleware (test local Storage and middleware)
 
+Adaptiv layout.
+
 ### Using
 
 - ReduxToolKit
@@ -16,4 +18,4 @@ Adding comments to a movie in localStorage using Middleware (test local Storage 
 ### Note
 
 API sometimes returns empty ratings, description, or other items.
-Adaptiv layout.
+
