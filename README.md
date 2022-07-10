@@ -1,6 +1,6 @@
 ### About
 
-List of movies retrieved from yts.mx/api.
+List of movies received from yts.mx/api.
 On the main page there is a list of films, with brief information about the film.
 A separate page of the current movie.
 Simple custom pagination and skeleton.
